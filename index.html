@@ -42,16 +42,14 @@
   }
 
   ::selection{ background:var(--accent); color:#10110F; }
-
   a{ color:inherit; }
-
   .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
   }
 
-  /* ---------- top bar / lens switcher ---------- */
+  /* ---------- top bar ---------- */
   .topbar{
     position:sticky; top:0; z-index:50;
     background:rgba(16,17,15,0.88);
@@ -60,60 +58,40 @@
   }
   .topbar-inner{
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 28px;
-    max-width:1040px; margin:0 auto;
+    padding:16px 28px; max-width:1040px; margin:0 auto;
     gap:16px; flex-wrap:wrap;
   }
-  .name-mark{
-    font-family:var(--mono); font-size:13px; letter-spacing:0.04em;
-    color:var(--muted);
-  }
+  .name-mark{ font-family:var(--mono); font-size:13px; letter-spacing:0.04em; color:var(--muted); }
   .name-mark b{ color:var(--text); font-weight:500; }
 
   .lens-switcher{
     display:flex; gap:4px;
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:999px;
-    padding:4px;
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:999px; padding:4px;
   }
   .lens-btn{
     appearance:none; border:none; background:transparent;
     font-family:var(--mono); font-size:12px; letter-spacing:0.03em;
-    color:var(--muted);
-    padding:8px 16px;
-    border-radius:999px;
-    cursor:pointer;
-    transition: color .25s ease, background .25s ease;
-    white-space:nowrap;
+    color:var(--muted); padding:8px 16px; border-radius:999px;
+    cursor:pointer; transition: color .25s ease, background .25s ease; white-space:nowrap;
   }
   .lens-btn:hover{ color:var(--text); }
   .lens-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
-  .lens-btn[data-active="true"]{
-    background:var(--accent);
-    color:#10110F;
-    font-weight:500;
-  }
+  .lens-btn[data-active="true"]{ background:var(--accent); color:#10110F; font-weight:500; }
 
   /* ---------- hero ---------- */
   .hero{
-    padding:100px 0 64px;
-    border-bottom:1px solid var(--line);
-    position:relative;
-    overflow:hidden;
+    padding:100px 0 64px; border-bottom:1px solid var(--line);
+    position:relative; overflow:hidden;
   }
   .hero::before{
-    content:"";
-    position:absolute; inset:0;
+    content:""; position:absolute; inset:0;
     background: radial-gradient(640px 320px at 85% -10%, var(--accent-soft), transparent 70%);
-    transition: background .5s ease;
-    pointer-events:none;
+    transition: background .5s ease; pointer-events:none;
   }
   .eyebrow{
     font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--accent);
-    transition:color .4s ease;
-    margin-bottom:18px;
+    color:var(--accent); transition:color .4s ease; margin-bottom:18px;
     display:flex; align-items:center; gap:10px;
   }
   .eyebrow::before{
@@ -122,43 +100,25 @@
     box-shadow:0 0 0 4px var(--accent-soft);
   }
   h1.role-title{
-    font-family:var(--display);
-    font-weight:500;
-    font-size:clamp(40px, 6vw, 68px);
-    line-height:1.04;
-    letter-spacing:-0.01em;
-    max-width:780px;
-    min-height:1.1em;
+    font-family:var(--display); font-weight:500;
+    font-size:clamp(40px, 6vw, 68px); line-height:1.04;
+    letter-spacing:-0.01em; max-width:780px; min-height:1.1em;
   }
-  .role-title .accent-word{
-    font-style:italic; color:var(--accent); transition:color .4s ease;
-  }
-  .summary{
-    margin-top:24px;
-    max-width:620px;
-    color:var(--muted);
-    font-size:16.5px;
-    min-height:5.4em;
-  }
+  .role-title .accent-word{ font-style:italic; color:var(--accent); transition:color .4s ease; }
+  .summary{ margin-top:24px; max-width:620px; color:var(--muted); font-size:16.5px; min-height:5.4em; }
 
   .hero-meta{
-    margin-top:36px;
-    display:flex; flex-wrap:wrap; gap:10px 28px;
+    margin-top:36px; display:flex; flex-wrap:wrap; gap:10px 28px;
     font-family:var(--mono); font-size:13px; color:var(--faint);
   }
   .hero-meta a{ color:var(--muted); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .2s, color .2s; }
   .hero-meta a:hover{ color:var(--accent); border-color:var(--accent); }
 
   .stat-row{
-    margin-top:48px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+    margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr);
     border-top:1px solid var(--line);
   }
-  .stat{
-    padding:20px 0 0;
-    border-right:1px solid var(--line);
-  }
+  .stat{ padding:20px 0 0; border-right:1px solid var(--line); }
   .stat:last-child{ border-right:none; }
   .stat .num{ font-family:var(--display); font-size:30px; color:var(--text); }
   .stat .label{ font-family:var(--mono); font-size:11.5px; color:var(--faint); text-transform:uppercase; letter-spacing:.05em; margin-top:4px; }
@@ -169,22 +129,15 @@
     display:flex; align-items:baseline; justify-content:space-between;
     margin-bottom:36px; gap:16px; flex-wrap:wrap;
   }
-  .section-title{
-    font-family:var(--display); font-size:28px; font-weight:500;
-  }
-  .section-note{
-    font-family:var(--mono); font-size:12px; color:var(--faint);
-  }
+  .section-title{ font-family:var(--display); font-size:28px; font-weight:500; }
+  .section-note{ font-family:var(--mono); font-size:12px; color:var(--faint); }
 
   /* ---------- skills ---------- */
   .skills-grid{
     display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
-    gap:1px; background:var(--line);
-    border:1px solid var(--line);
+    gap:1px; background:var(--line); border:1px solid var(--line);
   }
-  .skill-group{
-    background:var(--panel); padding:22px 22px 24px;
-  }
+  .skill-group{ background:var(--panel); padding:22px 22px 24px; }
   .skill-group h3{
     font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; text-transform:uppercase;
     color:var(--accent); transition:color .4s ease; margin-bottom:14px;
@@ -192,9 +145,7 @@
   .pill-row{ display:flex; flex-wrap:wrap; gap:6px; }
   .pill{
     font-family:var(--mono); font-size:12px; color:var(--muted);
-    border:1px solid var(--line); border-radius:5px;
-    padding:5px 9px;
-    background:var(--panel-2);
+    border:1px solid var(--line); border-radius:5px; padding:5px 9px; background:var(--panel-2);
   }
 
   /* ---------- projects ---------- */
@@ -203,30 +154,20 @@
     display:grid; grid-template-columns:36px 1fr; gap:20px;
   }
   .project:first-of-type{ border-top:none; }
-  .project-index{
-    font-family:var(--mono); font-size:12px; color:var(--accent); transition:color .4s ease; padding-top:4px;
-  }
-  .project-title{
-    font-family:var(--display); font-size:22px; font-weight:500; margin-bottom:6px;
-  }
-  .project-stack{
-    font-family:var(--mono); font-size:11.5px; color:var(--faint); margin-bottom:14px; letter-spacing:.02em;
-  }
+  .project-index{ font-family:var(--mono); font-size:12px; color:var(--accent); transition:color .4s ease; padding-top:4px; }
+  .project-title{ font-family:var(--display); font-size:22px; font-weight:500; margin-bottom:6px; }
+  .project-stack{ font-family:var(--mono); font-size:11.5px; color:var(--faint); margin-bottom:14px; letter-spacing:.02em; }
   .project ul{ list-style:none; }
-  .project li{
-    position:relative; padding-left:18px; margin-bottom:8px; color:var(--muted); font-size:14.5px;
-  }
-  .project li::before{
-    content:"—"; position:absolute; left:0; color:var(--accent); transition:color .4s ease;
-  }
-  .project-links{ margin-top:14px; display:flex; gap:18px; font-family:var(--mono); font-size:12.5px; }
+  .project li{ position:relative; padding-left:18px; margin-bottom:8px; color:var(--muted); font-size:14.5px; }
+  .project li::before{ content:"—"; position:absolute; left:0; color:var(--accent); transition:color .4s ease; }
+  .project-links{ margin-top:14px; display:flex; gap:18px; font-family:var(--mono); font-size:12.5px; flex-wrap:wrap; }
   .project-links a{ color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line); transition:.2s; }
   .project-links a:hover{ color:var(--accent); border-color:var(--accent); }
 
   /* ---------- experience ---------- */
   .exp-item{
     padding:28px 0; border-top:1px solid var(--line);
-    display:grid; grid-template-columns:1fr auto; gap:12px;
+    display:grid; grid-template-columns:1fr auto; gap:12px; align-items:start;
   }
   .exp-item:first-of-type{ border-top:none; }
   .exp-role{ font-family:var(--display); font-size:19px; font-weight:500; }
@@ -240,9 +181,7 @@
   }
   .exp-period{ font-family:var(--mono); font-size:12px; color:var(--faint); white-space:nowrap; padding-top:4px; }
   .exp-item ul{ list-style:none; margin-top:14px; }
-  .exp-item li{
-    position:relative; padding-left:18px; margin-bottom:7px; color:var(--muted); font-size:14.5px;
-  }
+  .exp-item li{ position:relative; padding-left:18px; margin-bottom:7px; color:var(--muted); font-size:14.5px; }
   .exp-item li::before{ content:"—"; position:absolute; left:0; color:var(--accent); transition:color .4s ease; }
 
   /* ---------- education / certs ---------- */
@@ -256,28 +195,37 @@
   .cert-list{ list-style:none; }
   .cert-list li{
     display:flex; justify-content:space-between; gap:12px;
-    padding:12px 0; border-top:1px solid var(--line);
-    font-size:14.5px; color:var(--muted);
+    padding:12px 0; border-top:1px solid var(--line); font-size:14.5px; color:var(--muted);
   }
   .cert-list li:first-child{ border-top:none; }
   .cert-list .cert-year{ font-family:var(--mono); font-size:12px; color:var(--faint); white-space:nowrap; }
 
-  /* ---------- footer ---------- */
-  footer{
-    padding:48px 0 60px;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  /* ---------- volunteer ---------- */
+  .vol-list{ list-style:none; }
+  .vol-list li{
+    position:relative; padding-left:18px; margin-bottom:12px;
+    color:var(--muted); font-size:14.5px; border-top:1px solid var(--line); padding-top:14px;
   }
+  .vol-list li:first-child{ border-top:none; padding-top:0; }
+  .vol-list li::before{ content:"—"; position:absolute; left:0; top:14px; color:var(--accent); transition:color .4s ease; }
+  .vol-list li:first-child::before{ top:0; }
+
+  /* ---------- footer ---------- */
+  footer{ padding:48px 0 60px; }
   .footer-links{ display:flex; gap:22px; font-family:var(--mono); font-size:13px; }
   .footer-links a{ text-decoration:none; color:var(--muted); border-bottom:1px solid var(--line); padding-bottom:2px; transition:.2s; }
   .footer-links a:hover{ color:var(--accent); border-color:var(--accent); }
   .copyline{ font-family:var(--mono); font-size:12px; color:var(--faint); }
 
   @media (max-width:600px){
-    .stat-row{ grid-template-columns:1fr; }
-    .stat{ border-right:none; border-bottom:1px solid var(--line); padding-bottom:16px; }
+    .stat-row{ grid-template-columns:repeat(2,1fr); }
+    .stat{ padding-bottom:16px; }
+    .stat:nth-child(2){ border-right:none; }
     .project{ grid-template-columns:1fr; }
     .topbar-inner{ flex-direction:column; align-items:flex-start; }
     .lens-switcher{ width:100%; justify-content:space-between; }
+    .exp-item{ grid-template-columns:1fr; }
+    .exp-period{ margin-top:-6px; }
   }
 </style>
 </head>
@@ -299,7 +247,6 @@
     <div class="eyebrow" id="eyebrow">VIEWING AS — DATA SCIENTIST</div>
     <h1 class="role-title" id="role-title">Building models people can <span class="accent-word">trust</span>, not just ones that score well.</h1>
     <p class="summary" id="summary"></p>
-
     <div class="hero-meta">
       <span>West Bengal, India</span>
       <a href="mailto:subhaschakraborty104@gmail.com">subhaschakraborty104@gmail.com</a>
@@ -307,11 +254,11 @@
       <a href="https://www.linkedin.com/in/subhas007/" target="_blank" rel="noopener">linkedin.com/in/subhas007</a>
       <a href="https://github.com/subhas07" target="_blank" rel="noopener">github.com/subhas07</a>
     </div>
-
     <div class="stat-row">
       <div class="stat"><div class="num">3</div><div class="label">Deployed projects</div></div>
       <div class="stat"><div class="num">150K+</div><div class="label">Records processed</div></div>
-      <div class="stat"><div class="num">94%</div><div class="label">Peak model accuracy</div></div>
+      <div class="stat"><div class="num">98%</div><div class="label">Peak model accuracy</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">Internships</div></div>
     </div>
   </div>
 </header>
@@ -347,15 +294,15 @@
       <div>
         <div class="exp-role">Data Science Intern</div>
         <div class="exp-company">
-          Zidio Development
-          <span class="exp-badge">Remote</span>
+          Euphoria Genx
+          <span class="exp-badge">On-Site</span>
         </div>
         <ul>
-          <li>Analyzed datasets using Python and SQL to generate business insights.</li>
-          <li>Built Power BI dashboards to track KPIs and performance metrics.</li>
+          <li>Analyzed ~20K+ records using Python and SQL to identify business trends and generate actionable insights.</li>
+          <li>Developed 3+ interactive Power BI dashboards to monitor KPIs and improve reporting efficiency.</li>
         </ul>
       </div>
-      <div class="exp-period">Apr 2026 – Jun 2026</div>
+      <div class="exp-period">Mar 2026 – Jun 2026</div>
     </div>
 
     <div class="exp-item">
@@ -366,8 +313,8 @@
           <span class="exp-badge">On-Site</span>
         </div>
         <ul>
-          <li>Developed machine learning models for classification and regression tasks.</li>
-          <li>Performed data preprocessing, feature engineering, and model evaluation.</li>
+          <li>Developed and evaluated classification and regression models, achieving up to 90% prediction accuracy on project datasets.</li>
+          <li>Performed data preprocessing, feature engineering, and model evaluation using Python and Scikit-learn.</li>
         </ul>
       </div>
       <div class="exp-period">Jun 2024 – Sep 2024</div>
@@ -382,7 +329,7 @@
       <div class="section-title" style="margin-bottom:24px;">Education</div>
       <div class="degree">B.Tech in Computer Science Engineering</div>
       <div class="school">Future Institute of Engineering and Management (MAKAUT)</div>
-      <div class="meta">2022 – 2026 · CGPA 7.64 · DBMS, Object-Oriented Programming</div>
+      <div class="meta">2022 – 2026 · CGPA 7.64 · OOP, DBMS</div>
       <div class="scores">
         Class XII (WBCHSE): 86.16%, 2020<br>
         Class X (WBBSE): 93.28%, 2018
@@ -399,8 +346,21 @@
   </div>
 </section>
 
+<section id="volunteer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-title">Volunteer</div>
+      <div class="section-note">beyond the desk</div>
+    </div>
+    <ul class="vol-list">
+      <li>Led the inter-college sports tournament <strong>Vibgyor</strong>, coordinating event planning and full execution.</li>
+      <li>Organised a blood donation camp in collaboration with healthcare professionals and student volunteers.</li>
+    </ul>
+  </div>
+</section>
+
 <footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; width:100%;">
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
     <div class="copyline">Subhas Chakraborty — built with three lenses, one toolkit.</div>
     <div class="footer-links">
       <a href="mailto:subhaschakraborty104@gmail.com">Email</a>
@@ -416,44 +376,45 @@ const DATA = {
     accentVars: { accent:'#9C8CFF', soft:'#9C8CFF22' },
     eyebrow: 'VIEWING AS — DATA SCIENTIST',
     titleHTML: 'Building models people can <span class="accent-word">trust</span>, not just ones that score well.',
-    summary: "Aspiring Data Scientist specializing in end-to-end machine learning workflows, from model development to deployment, with a focus on Explainable AI for trustworthy predictions. Built and deployed 3 ML projects achieving up to 94% accuracy, applying SHAP for model interpretability and Streamlit for production-style deployment.",
+    summary: "Computer Science undergraduate specialising in end-to-end ML workflows, from predictive modeling to Streamlit deployment, with a unique focus on Explainable AI (SHAP) to build trustworthy models. Skilled in Python, SQL, and Machine Learning, passionate about translating complex data into actionable, interactive insights.",
     skillsNote: "grouped for a data scientist's toolkit",
     skills: [
-      { h:'Machine Learning', tags:['Predictive Modeling','Scikit-learn','Feature Engineering','Model Evaluation','Explainable AI (SHAP)'] },
-      { h:'Programming & Data', tags:['Python','Pandas','NumPy','Matplotlib','Seaborn','SQL','PostgreSQL','EDA','Statistics','Probability'] },
-      { h:'Deployment & Tools', tags:['Streamlit','Jupyter Notebook','Git','GitHub','NLP fundamentals'] },
-      { h:'Visualization', tags:['Power BI','Data Storytelling','Dashboarding'] }
+      { h:'Machine Learning', tags:['Predictive Modeling','Scikit-learn','Feature Engineering','Model Evaluation','Explainable AI (SHAP)','Hypothesis Testing'] },
+      { h:'Programming & Core', tags:['Python','SQL','OOP','DBMS'] },
+      { h:'Libraries', tags:['Pandas','NumPy','Matplotlib','Seaborn'] },
+      { h:'Databases & BI', tags:['PostgreSQL','Power BI','EDA','Statistics','Probability'] },
+      { h:'Deployment & Tools', tags:['Streamlit','Jupyter Notebook','Git','GitHub','Basic Excel'] }
     ],
     projects: [
       {
         title:'AI-Powered Customer Churn Prediction System',
         stack:'Python · Pandas · Scikit-learn · Streamlit · SHAP',
         points:[
-          'Built and tuned a Random Forest classifier to predict customer churn, achieving 94% accuracy and 0.82 F1-score on held-out data.',
-          'Applied SHAP explainability to interpret feature importance at global and individual-prediction levels, improving model transparency.',
-          'Designed and deployed a production-style Streamlit app for real-time inference and interactive model exploration.'
+          'Built and optimised a Random Forest model for customer churn prediction, achieving 94% accuracy and 0.82 F1-score, improving identification of at-risk customers.',
+          'Applied SHAP explainability to identify key churn drivers and improve business interpretability.',
+          'Deployed an interactive Streamlit dashboard for real-time churn risk analysis.'
         ],
-        live:'ai-customer-churn-prediction', liveUrl:'https://ai-customer-churn-prediction-dtvxrzdungheehvsvwvsht.streamlit.app/', repo:'subhas07/AI-Customer-Churn-Prediction'
-      },
-      {
-        title:'Breast Cancer Prediction with Explainable AI',
-        stack:'Python · Pandas · NumPy · Scikit-learn · Streamlit · SHAP',
-        points:[
-          'Developed a classification pipeline for diagnosis support, including preprocessing, feature scaling, and model selection across algorithms.',
-          'Optimized performance through systematic feature engineering and evaluation, improving prediction reliability.',
-          'Built and deployed a real-time prediction interface integrating SHAP-based explanations alongside model output.'
-        ],
-        live:'breast-cancer-explainable-ai', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
+        live:'Live Demo', liveUrl:'https://ai-customer-churn-prediction-dtvxrzdungheehvsvwvsht.streamlit.app/', repo:'subhas07/AI-Customer-Churn-Prediction'
       },
       {
         title:'Taxi Fare Analytics & Prediction System',
         stack:'Power BI · Python · PostgreSQL · SQL · Scikit-learn',
         points:[
-          'Processed and analyzed 150,000+ taxi ride records using SQL and Python — cleaning, feature engineering, and EDA.',
-          'Built a fare prediction model to support demand forecasting and pricing analysis.',
-          'Developed a Power BI dashboard to visualize model outputs and operational KPIs alongside the predictive layer.'
+          'Developed Python automation scripts for data cleaning, validation, feature engineering, and analysis of 150K+ taxi records using PostgreSQL and SQL.',
+          'Created a Power BI dashboard with 10+ KPIs covering revenue, ride demand, and performance analysis.',
+          'Developed machine learning models to predict taxi fares using engineered features and regression metrics.'
         ],
         repo:'subhas07/Taxi-Fare-Analytics-and-Prediction-System'
+      },
+      {
+        title:'Breast Cancer Prediction with Explainable AI',
+        stack:'Python · Scikit-learn · Streamlit · SHAP · SVM',
+        points:[
+          'Trained and optimised an SVM classifier on the Wisconsin Breast Cancer Dataset, achieving 98% accuracy and high diagnostic reliability.',
+          'Integrated SHAP-based Explainable AI to provide interpretable, feature-level insights for SVM predictions.',
+          'Developed and deployed a Streamlit web app for real-time breast cancer prediction and visualisation.'
+        ],
+        live:'Live Demo', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
       }
     ]
   },
@@ -464,19 +425,20 @@ const DATA = {
     summary: "Data Analyst with hands-on experience turning raw datasets into actionable business insights using SQL, Python, and Power BI. Built and deployed 3 end-to-end analytics projects covering 150K+ records, including interactive dashboards and predictive models with measurable accuracy gains.",
     skillsNote: "grouped for a data analyst's toolkit",
     skills: [
-      { h:'Data Analysis & Visualization', tags:['SQL','Power BI','Pandas','NumPy','Matplotlib','Seaborn','EDA','Dashboarding','KPI Reporting'] },
-      { h:'Databases', tags:['PostgreSQL','Data Cleaning','Feature Engineering'] },
-      { h:'Statistics & Modeling', tags:['Probability','Statistics','Machine Learning','Scikit-learn','Predictive Modeling','SHAP'] },
-      { h:'Tools', tags:['Jupyter Notebook','Streamlit','Git','GitHub'] }
+      { h:'Data Analysis & Visualization', tags:['SQL','Power BI','EDA','Dashboarding','KPI Reporting','Hypothesis Testing'] },
+      { h:'Libraries', tags:['Pandas','NumPy','Matplotlib','Seaborn'] },
+      { h:'Databases', tags:['PostgreSQL','Data Cleaning','Feature Engineering','Basic Excel'] },
+      { h:'Statistics & Modeling', tags:['Statistics','Probability','Machine Learning','Scikit-learn','SHAP'] },
+      { h:'Tools', tags:['Jupyter Notebook','Streamlit','Git','GitHub','OOP','DBMS'] }
     ],
     projects: [
       {
         title:'Taxi Fare Analytics & Prediction System',
         stack:'Power BI · Python · PostgreSQL · SQL · Scikit-learn',
         points:[
-          'Analyzed 150,000+ taxi ride records using SQL and Python to clean, transform, and explore data — uncovering trends in demand, revenue, and operations.',
-          'Designed an interactive Power BI dashboard tracking ride demand, revenue trends, vehicle performance, and customer ratings.',
-          'Engineered features and built a fare prediction model to support pricing and demand-forecasting.'
+          'Developed Python automation scripts for data cleaning, validation, feature engineering, and analysis of 150K+ taxi records using PostgreSQL and SQL.',
+          'Created a Power BI dashboard with 10+ KPIs for revenue, ride demand, and performance analysis.',
+          'Built machine learning models to predict taxi fares using engineered features and regression metrics.'
         ],
         repo:'subhas07/Taxi-Fare-Analytics-and-Prediction-System'
       },
@@ -484,21 +446,21 @@ const DATA = {
         title:'AI-Powered Customer Churn Prediction Dashboard',
         stack:'Python · Pandas · Scikit-learn · Streamlit · SHAP',
         points:[
-          'Built a Random Forest model to predict customer churn, achieving 94% accuracy and 0.82 F1-score, enabling proactive retention targeting.',
-          'Applied SHAP explainability to identify key churn drivers, translating model output into business-ready retention insights.',
+          'Built and optimised a Random Forest model for customer churn prediction, achieving 94% accuracy and 0.82 F1-score, enabling proactive retention targeting.',
+          'Applied SHAP explainability to identify key churn drivers, translating model output into clear, business-ready retention insights.',
           'Deployed an interactive Streamlit dashboard allowing real-time churn risk scoring and exploration.'
         ],
-        live:'ai-customer-churn-prediction', liveUrl:'https://ai-customer-churn-prediction-dtvxrzdungheehvsvwvsht.streamlit.app/', repo:'subhas07/AI-Customer-Churn-Prediction'
+        live:'Live Demo', liveUrl:'https://ai-customer-churn-prediction-dtvxrzdungheehvsvwvsht.streamlit.app/', repo:'subhas07/AI-Customer-Churn-Prediction'
       },
       {
         title:'Breast Cancer Prediction Web App',
-        stack:'Python · Pandas · NumPy · Scikit-learn · Streamlit · SHAP',
+        stack:'Python · Scikit-learn · Streamlit · SHAP · SVM',
         points:[
-          'Built and deployed an ML web app to support data-driven diagnosis decisions, including preprocessing and feature scaling.',
-          'Improved model reliability through systematic feature engineering and performance tuning.',
-          'Designed a real-time, user-friendly prediction interface for non-technical end users.'
+          'Trained and optimised an SVM classifier on the Wisconsin Breast Cancer Dataset, achieving 98% accuracy and high diagnostic reliability.',
+          'Integrated SHAP-based Explainable AI to provide interpretable, feature-level insights alongside predictions.',
+          'Deployed a Streamlit web app with a user-friendly interface for real-time prediction and visualisation.'
         ],
-        live:'breast-cancer-explainable-ai', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
+        live:'Live Demo', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
       }
     ]
   },
@@ -509,18 +471,18 @@ const DATA = {
     summary: "Business Analyst with hands-on experience translating raw data into clear business insights and decision-support tools using SQL, Power BI, and Python. Delivered 3 end-to-end analytics projects covering 150K+ records, including a stakeholder-facing dashboard and predictive models that informed retention and pricing decisions.",
     skillsNote: "grouped for a business analyst's toolkit",
     skills: [
-      { h:'Business & Data Analysis', tags:['Requirements Analysis','KPI Reporting','Dashboarding','Stakeholder Communication','EDA'] },
-      { h:'Tools & Visualization', tags:['Power BI','SQL','Excel-style Reporting','Pandas','NumPy','Matplotlib','Seaborn'] },
-      { h:'Databases', tags:['PostgreSQL','Data Cleaning','Feature Engineering'] },
-      { h:'Supporting Technical Skills', tags:['Statistics','Probability','Machine Learning','Scikit-learn','SHAP','Jupyter Notebook','Streamlit','Git/GitHub'] }
+      { h:'Business & Data Analysis', tags:['Requirements Analysis','KPI Reporting','Dashboarding','Stakeholder Communication','EDA','Hypothesis Testing'] },
+      { h:'Tools & Visualization', tags:['Power BI','SQL','Basic Excel','Pandas','NumPy','Matplotlib','Seaborn'] },
+      { h:'Databases', tags:['PostgreSQL','Data Cleaning','Feature Engineering','DBMS'] },
+      { h:'Supporting Technical Skills', tags:['Statistics','Probability','Machine Learning','Scikit-learn','SHAP','Streamlit','Git/GitHub','OOP'] }
     ],
     projects: [
       {
         title:'Taxi Fare Analytics & Business Intelligence Dashboard',
         stack:'Power BI · SQL · Python · PostgreSQL',
         points:[
-          'Partnered data exploration with business reporting needs: cleaned and analyzed 150,000+ ride records to surface demand patterns, revenue trends, and bottlenecks.',
-          'Designed a stakeholder-facing Power BI dashboard giving operations teams a single source of truth for KPI tracking.',
+          'Cleaned and analysed 150K+ ride records using Python automation scripts and SQL to surface demand patterns, revenue trends, and operational bottlenecks.',
+          'Designed a stakeholder-facing Power BI dashboard with 10+ KPIs, giving operations teams a single source of truth.',
           'Built a supporting fare-prediction model to inform pricing strategy and demand forecasting.'
         ],
         repo:'subhas07/Taxi-Fare-Analytics-and-Prediction-System'
@@ -530,20 +492,20 @@ const DATA = {
         stack:'Python · Streamlit · SQL Logic · SHAP',
         points:[
           'Investigated customer churn drivers, identifying the highest-impact factors behind attrition to support a retention strategy.',
-          'Built a Random Forest model (94% accuracy) and applied SHAP explainability to convert findings into business-ready recommendations.',
-          'Delivered an interactive dashboard for real-time churn risk review, enabling teams to act without technical support.'
+          'Built a Random Forest model (94% accuracy) and applied SHAP explainability to convert findings into business-ready recommendations for non-technical stakeholders.',
+          'Delivered an interactive dashboard for real-time churn risk review, enabling business teams to act without technical support.'
         ],
-        live:'ai-customer-churn-prediction', liveUrl:'https://ai-customer-churn-prediction-dtvxrzdungheehvsvwvsht.streamlit.app/', repo:'subhas07/AI-Customer-Churn-Prediction'
+        live:'Live Demo', liveUrl:'https://ai-customer-churn-prediction-dtvxrzdungheehvsvwvsht.streamlit.app/', repo:'subhas07/AI-Customer-Churn-Prediction'
       },
       {
         title:'Breast Cancer Risk Decision-Support Application',
-        stack:'Python · Scikit-learn · Streamlit · SHAP',
+        stack:'Python · Scikit-learn · Streamlit · SHAP · SVM',
         points:[
-          'Scoped and built a decision-support tool to assist diagnosis-related decisions, owning the project end-to-end from raw data to deployed app.',
-          'Improved analytical reliability through structured preprocessing, feature engineering, and performance evaluation.',
-          'Designed a simple, real-time interface for non-technical end users, prioritizing usability and clarity.'
+          'Scoped and built a decision-support tool to assist diagnosis-related decisions, owning the project end-to-end from raw data to deployed application.',
+          'Achieved 98% accuracy with an SVM classifier and integrated SHAP explainability for interpretable, clinician-readable outputs.',
+          'Designed a simple, real-time interface for non-technical end users, prioritising usability and clarity of output.'
         ],
-        live:'breast-cancer-explainable-ai', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
+        live:'Live Demo', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
       }
     ]
   }
@@ -571,9 +533,7 @@ function render(lens){
   skillsGrid.innerHTML = d.skills.map(g => `
     <div class="skill-group">
       <h3>${g.h}</h3>
-      <div class="pill-row">
-        ${g.tags.map(t => `<span class="pill">${t}</span>`).join('')}
-      </div>
+      <div class="pill-row">${g.tags.map(t => `<span class="pill">${t}</span>`).join('')}</div>
     </div>
   `).join('');
 
@@ -585,7 +545,7 @@ function render(lens){
         <div class="project-stack">${p.stack}</div>
         <ul>${p.points.map(pt => `<li>${pt}</li>`).join('')}</ul>
         <div class="project-links">
-          ${p.live ? `<a href="${p.liveUrl}" target="_blank" rel="noopener">Live: ${p.live}</a>` : ''}
+          ${p.live ? `<a href="${p.liveUrl}" target="_blank" rel="noopener">${p.live}</a>` : ''}
           <a href="https://github.com/${p.repo}" target="_blank" rel="noopener">github.com/${p.repo}</a>
         </div>
       </div>
@@ -600,7 +560,6 @@ function render(lens){
 }
 
 buttons.forEach(b => b.addEventListener('click', () => render(b.dataset.lens)));
-
 render('ds');
 </script>
 
