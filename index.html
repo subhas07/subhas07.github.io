@@ -255,7 +255,7 @@
       <a href="https://github.com/subhas07" target="_blank" rel="noopener">github.com/subhas07</a>
     </div>
     <div class="stat-row">
-      <div class="stat"><div class="num">3</div><div class="label">Deployed projects</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Projects built</div></div>
       <div class="stat"><div class="num">150K+</div><div class="label">Records processed</div></div>
       <div class="stat"><div class="num">98%</div><div class="label">Peak model accuracy</div></div>
       <div class="stat"><div class="num">2</div><div class="label">Internships</div></div>
@@ -277,7 +277,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="section-title">Projects</div>
-      <div class="section-note">same three builds, read through each lens</div>
+      <div class="section-note">same four builds, read through each lens</div>
     </div>
     <div id="projects-list"></div>
   </div>
@@ -298,8 +298,8 @@
           <span class="exp-badge">Remote</span>
         </div>
         <ul>
-          <li>Analyzed ~20K+ records using Python and SQL to identify business trends and generate actionable insights.</li>
-          <li>Developed 3+ interactive Power BI dashboards to monitor KPIs and improve reporting efficiency.</li>
+          <li>Analyzed 20,000+ records using Python and SQL, performing data cleaning, preprocessing, validation, and anomaly detection to surface trends and support accurate, consistent reporting.</li>
+          <li>Built 3+ interactive Power BI dashboards and automated recurring KPI reports, transforming analyzed data into insights that supported performance tracking and data-driven decision-making.</li>
         </ul>
       </div>
       <div class="exp-period">Mar 2026 – Jun 2026</div>
@@ -309,15 +309,15 @@
       <div>
         <div class="exp-role">AI / ML Intern</div>
         <div class="exp-company">
-          Euphoria Genx
+          Ardent Computech
           <span class="exp-badge">Hybrid</span>
         </div>
         <ul>
-          <li>Developed and evaluated classification and regression models, achieving up to 90% prediction accuracy on project datasets.</li>
-          <li>Performed data preprocessing, feature engineering, and model evaluation using Python and Scikit-learn.</li>
+          <li>Built classification and regression models using Scikit-learn, achieving prediction accuracy of up to 90%.</li>
+          <li>Performed feature engineering and model evaluation, and collaborated on AI/ML workflows using Git.</li>
         </ul>
       </div>
-      <div class="exp-period">Jun 2024 – Sep 2024</div>
+      <div class="exp-period">Dec 2024 – Mar 2025</div>
     </div>
 
   </div>
@@ -415,6 +415,15 @@ const DATA = {
           'Developed and deployed a Streamlit web app for real-time breast cancer prediction and visualisation.'
         ],
         live:'Live Demo', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
+      },
+      {
+        title:'Travel & Tourism Website (Group Project)',
+        stack:'HTML · CSS · JavaScript · Bootstrap · Git',
+        points:[
+          'Collaborated with a small team to design and build a responsive travel and tourism website, using Git/GitHub for version control across the build.',
+          'Implemented front-end structure and interactivity with HTML, CSS, JavaScript, and Bootstrap, applying the same iterative, checkpoint-driven workflow used on the ML projects.',
+          'Contributed outside a typical data role, reinforcing full-stack fundamentals alongside the modeling and analytics work.'
+        ]
       }
     ]
   },
@@ -461,6 +470,15 @@ const DATA = {
           'Deployed a Streamlit web app with a user-friendly interface for real-time prediction and visualisation.'
         ],
         live:'Live Demo', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
+      },
+      {
+        title:'Travel & Tourism Website (Group Project)',
+        stack:'HTML · CSS · JavaScript · Bootstrap · Git',
+        points:[
+          'Collaborated in a team using Git/GitHub to build a responsive travel booking website, applying the same structured, checkpoint-driven approach used across the analytics builds.',
+          'Handled front-end layout and interactivity with HTML, CSS, JavaScript, and Bootstrap.',
+          'Practiced cross-functional collaboration on a non-data deliverable, useful context for working alongside product and design teams.'
+        ]
       }
     ]
   },
@@ -506,6 +524,15 @@ const DATA = {
           'Designed a simple, real-time interface for non-technical end users, prioritising usability and clarity of output.'
         ],
         live:'Live Demo', liveUrl:'https://breast-cancer-explainable-ai-kume62pgppqhxvckqstu9m.streamlit.app/', repo:'subhas07/breast-cancer-explainable-ai'
+      },
+      {
+        title:'Travel & Tourism Website (Group Project)',
+        stack:'HTML · CSS · JavaScript · Bootstrap · Git',
+        points:[
+          'Partnered with a small cross-functional team to scope and deliver a responsive travel and tourism website end-to-end.',
+          'Coordinated version control and task handoffs via Git/GitHub, mirroring the collaborative process used on client-facing analytics builds.',
+          'Gained direct exposure to front-end delivery, strengthening the ability to work alongside engineering and design stakeholders.'
+        ]
       }
     ]
   }
@@ -546,7 +573,7 @@ function render(lens){
         <ul>${p.points.map(pt => `<li>${pt}</li>`).join('')}</ul>
         <div class="project-links">
           ${p.live ? `<a href="${p.liveUrl}" target="_blank" rel="noopener">${p.live}</a>` : ''}
-          <a href="https://github.com/${p.repo}" target="_blank" rel="noopener">github.com/${p.repo}</a>
+          ${p.repo ? `<a href="https://github.com/${p.repo}" target="_blank" rel="noopener">github.com/${p.repo}</a>` : ''}
         </div>
       </div>
     </div>
